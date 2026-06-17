@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "StoryWrite",
+    "slug": "story-write",
+    "version": "1.0.0",
+    
+    
+      "scheme": "storywrite",
+    "web": {
+        "favicon": "./assets/favicon.png"
+      },
+      
+        "experiments": {
+          "tsconfigPaths": true
+        },
+      
+      "plugins": [
+        "expo-router"
+      ],
+    
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    
+     "userInterfaceStyle": "light",
+    
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.storywrite.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    }
+  }
+}
