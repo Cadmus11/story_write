@@ -94,14 +94,21 @@
 
 ---
 
-## Phase 7: Story Collections (Post-MVP)
+## Phase 7: Story Collections ✅
 
 | Feature | Status |
 |---|---|
-| Collection data model | ⬜ |
-| Create/edit collections | ⬜ |
-| Add/remove stories from collections | ⬜ |
-| Collection cover | ⬜ |
+| Collection data model (SQLite tables + types) | ✅ |
+| Create collection | ✅ |
+| Edit collection (title, description) | ✅ |
+| Delete collection (stories preserved) | ✅ |
+| Add story to collection | ✅ |
+| Remove story from collection | ✅ |
+| Collection list screen (tab) | ✅ |
+| Collection detail screen (stories in grid) | ✅ |
+| Collection card with cover display | ✅ |
+| "Add to Collection" action on story view | ✅ |
+| Automatic story count tracking | ✅ |
 | Nested collections | ⬜ |
 
 ---

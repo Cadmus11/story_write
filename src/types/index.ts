@@ -20,6 +20,16 @@ export interface Story {
   updated_at: string
 }
 
+export interface Collection {
+  id: string
+  title: string
+  description: string
+  cover_json: string | null
+  story_count: number
+  created_at: string
+  updated_at: string
+}
+
 export type SortOption = 'updated_at' | 'created_at' | 'title'
 
 export type ViewMode = 'grid' | 'list'

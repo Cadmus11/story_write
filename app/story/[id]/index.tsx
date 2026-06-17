@@ -6,12 +6,14 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { WebView } from 'react-native-webview'
 import { useStoryStore } from 'src/store/storyStore'
 import { ExportModal } from 'src/components/ExportModal'
+import { AddToCollectionModal } from 'src/components/AddToCollectionModal'
 import type { CoverConfig } from 'src/types'
 
 export default function ViewStoryScreen() {
   const { id } = useLocalSearchParams<{ id: string }>()
   const router = useRouter()
   const [showExport, setShowExport] = useState(false)
+  const [showCollections, setShowCollections] = useState(false)
   const story = useStoryStore((s) => s.stories.find((st) => st.id === id))
   const duplicateStory = useStoryStore((s) => s.duplicateStory)
   const deleteStory = useStoryStore((s) => s.deleteStory)
@@ -66,6 +68,9 @@ export default function ViewStoryScreen() {
         <View className="flex-row gap-4">
           <TouchableOpacity onPress={() => router.push(`/story/${id}/edit`)}>
             <Text className="text-base text-gray-500">Edit</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setShowCollections(true)}>
+            <Text className="text-base text-gray-500">Add to</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => setShowExport(true)}>
             <Text className="text-base text-gray-500">Share</Text>
@@ -133,11 +138,18 @@ export default function ViewStoryScreen() {
       </ScrollView>
 
       {story && (
-        <ExportModal
-          visible={showExport}
-          story={story}
-          onClose={() => setShowExport(false)}
-        />
+        <>
+          <ExportModal
+            visible={showExport}
+            story={story}
+            onClose={() => setShowExport(false)}
+          />
+          <AddToCollectionModal
+            visible={showCollections}
+            storyId={story.id}
+            onClose={() => setShowCollections(false)}
+          />
+        </>
       )}
     </SafeAreaView>
   )
